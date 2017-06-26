@@ -17,7 +17,7 @@ and open the template in the editor.
         <?php
         // put your code here
         ?>
-        <form method="POST" action="Register.php">
+        <form method="POST" action="login.php"> <!--ou action="RegisterForm.php"-->
             <section class="inscription_formulaire">
             <label>Pseudo :</label>
             <input type="text" id="pseudo" name="pseudo"/>

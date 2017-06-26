@@ -9,20 +9,32 @@ class User {
 
     private $pseudo;
     private $mdp;
-    private $avatar;
+    
     private $nom;
     private $prenom;
-    private $coordonnees;
+    //private $coordonnees;
     private $mail;
     private $telephone;
-    private $adresse;
+    //private $adresse;
     private $ville;
-    private $diplomes;
+    //private $diplomes;
     private $dateInscription;
-    private $age;
-    private $photoprofil;
-    private $systemepoints;
-    private $statut;
+    //private $age;
+    //private $photoprofil;
+    //private $systemepoints;
+    //private $statut;
+
+    
+    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $telephone, $ville, $dateInscription) {
+        $this->pseudo = $pseudo;
+        $this->mdp = $mdp;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->mail = $mail;
+        $this->telephone = $telephone;
+        $this->ville = $ville;
+        $this->dateInscription = $dateInscription;
+    }
 
     /* La valeur spéciale NULL représente une variable sans valeur
       Une variable est considérée comme null si :
@@ -31,7 +43,7 @@ class User {
       elle a été effacée avec la fonction unset().
      */
 
-    function __construct($pseudo, $mdp, $avatar, $nom, $prenom, $coordonnees, $mail, $telephone, $adresse = null, $ville, $diplomes = null, $dateInscription, $age = null, $photoprofil = null, $systemepoints, $statut = "user") {
+    /*function __construct($pseudo, $mdp, $avatar, $nom, $prenom, $coordonnees, $mail, $telephone, $adresse = null, $ville, $diplomes = null, $dateInscription, $age = null, $photoprofil = null, $systemepoints, $statut = "user") {
         $this->pseudo = $pseudo;
         $this->mdp = $mdp;
         $this->avatar = $avatar;
@@ -48,7 +60,7 @@ class User {
         $this->photoprofil = $photoprofil;
         $this->systemepoints = $systemepoints;
         $this->statut = $statut;
-    }
+    }*/
 
     /* La méthode magique __set() permet de faire de la surchage de propriétés d'une classe. 
      * Lorsque l'on essaie de fixer la valeur d'une propriété inexistante de la classe, 
@@ -94,5 +106,9 @@ class User {
         echo "<p>" . $this->dateInscription . "</p>";
         echo "</section>";
     }
+    //pour recuperer les mdp
+    public function getData() {
+        return $this->mdp;
+    } 
 
 }

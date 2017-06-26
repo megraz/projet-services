@@ -22,11 +22,12 @@ if (isset($_POST['inscrire'])) {
   var_dump($trad)
   $trad->afficherProfil(); */
 
-if (!is_dir('posts')) {
-    mkdir('posts');
+
+if (!is_dir('user')) {
+    mkdir('user');
 }
-$file = fopen('posts/' . $titre
-        . '.txt', 'w');
-fwrite($file, $contenu);
+$userdata = serialize($this);
+$file = fopen('user/' . $this->pseudo . '.txt', 'w');
+fwrite($file, $userdata);
 fclose($file);
-//echo '<p>Bravo pour la création de ce message</p>';
+//echcao '<p>Bravo pour la création de ce message</p>';
