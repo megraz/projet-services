@@ -9,7 +9,6 @@ class User {
 
     private $pseudo;
     private $mdp;
-    
     private $nom;
     private $prenom;
     //private $coordonnees;
@@ -19,12 +18,13 @@ class User {
     private $ville;
     //private $diplomes;
     private $dateInscription;
+
     //private $age;
     //private $photoprofil;
     //private $systemepoints;
     //private $statut;
 
-    
+
     function __construct($pseudo, $mdp, $nom, $prenom, $mail, $telephone, $ville, $dateInscription) {
         $this->pseudo = $pseudo;
         $this->mdp = $mdp;
@@ -43,24 +43,24 @@ class User {
       elle a été effacée avec la fonction unset().
      */
 
-    /*function __construct($pseudo, $mdp, $avatar, $nom, $prenom, $coordonnees, $mail, $telephone, $adresse = null, $ville, $diplomes = null, $dateInscription, $age = null, $photoprofil = null, $systemepoints, $statut = "user") {
-        $this->pseudo = $pseudo;
-        $this->mdp = $mdp;
-        $this->avatar = $avatar;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        //$this->coordonnees = $coordonnees;
-        $this->mail = $mail;
-        $this->telephone = $telephone;
-        $this->adresse = $adresse;
-        $this->ville = $ville;
-        $this->diplomes = $diplomes;
-        $this->dateInscription = $dateInscription;
-        $this->age = $age;
-        $this->photoprofil = $photoprofil;
-        $this->systemepoints = $systemepoints;
-        $this->statut = $statut;
-    }*/
+    /* function __construct($pseudo, $mdp, $avatar, $nom, $prenom, $coordonnees, $mail, $telephone, $adresse = null, $ville, $diplomes = null, $dateInscription, $age = null, $photoprofil = null, $systemepoints, $statut = "user") {
+      $this->pseudo = $pseudo;
+      $this->mdp = $mdp;
+      $this->avatar = $avatar;
+      $this->nom = $nom;
+      $this->prenom = $prenom;
+      //$this->coordonnees = $coordonnees;
+      $this->mail = $mail;
+      $this->telephone = $telephone;
+      $this->adresse = $adresse;
+      $this->ville = $ville;
+      $this->diplomes = $diplomes;
+      $this->dateInscription = $dateInscription;
+      $this->age = $age;
+      $this->photoprofil = $photoprofil;
+      $this->systemepoints = $systemepoints;
+      $this->statut = $statut;
+      } */
 
     /* La méthode magique __set() permet de faire de la surchage de propriétés d'une classe. 
      * Lorsque l'on essaie de fixer la valeur d'une propriété inexistante de la classe, 
@@ -72,28 +72,61 @@ class User {
      * le second paramètre est la valeur que l'on a tenté d'assigner à l'attribut. 
      * Cette méthode ne retourne rien. */
 
-    public function setAdresse($adresse) {
+    function setAdresse($adresse) {
         $this->adresse = $adresse;
     }
 
-    public function setDiplomes($diplomes) {
+    function setDiplomes($diplomes) {
         $this->diplomes = $diplomes;
     }
 
-    public function setPhotoprofil($photoprofil) {
+    function setPhotoprofil($photoprofil) {
         $this->photoprofil = $photoprofil;
     }
 
-    public function setStatut($statut) {
+    function setStatut($statut) {
         $this->statut = $statut;
     }
 
-    public function stock() {
+    function getPseudo() {
+        return $this->pseudo;
+    }
+
+    function getMdp() {
+        return $this->mdp;
+    }
+
+    function getNom() {
+        return $this->nom;
+    }
+
+    function getPrenom() {
+        return $this->prenom;
+    }
+
+    function getMail() {
+        return $this->mail;
+    }
+
+    function getTelephone() {
+        return $this->telephone;
+    }
+
+    function getVille() {
+        return $this->ville;
+    }
+
+    function getDateInscription() {
+        return $this->dateInscription;
+    }
+
+
+    /*public function stock() {
         $data = serialize($this);
         $newFile = fopen("user/" . $this->pseudo . ".txt", "w");
         fwrite($newFile, $data);
         fclose($newFile);
-    }
+    }*/
 
     public function afficheProfil() {
         echo "<section class='profil'>";
@@ -106,9 +139,5 @@ class User {
         echo "<p>" . $this->dateInscription . "</p>";
         echo "</section>";
     }
-    //pour recuperer les mdp
-    public function getData() {
-        return $this->mdp;
-    } 
 
 }

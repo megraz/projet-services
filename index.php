@@ -23,10 +23,11 @@ and open the template in the editor.
             <input type="text" id="pseudo" name="pseudo"/>
             <label>Mot de Passe :</label>
             <input type="password" id="mdp" name="mdp"/>
-            <button name="inscrire" type="submit">S'inscrire</button>
+            <!--<button name="inscrire" type="submit">S'inscrire</button>-->
             <button name="connexion" type="submit">Connexion</button>
             </section>
         </form>
+        <a href="RegisterForm.php">S'inscrire</a>
         <!--<script src="main.js"></script>-->
     </body>
 </html>

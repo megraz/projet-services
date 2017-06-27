@@ -56,7 +56,7 @@ and open the template in the editor.
             
             <section class="checkbox">
                 <p>
-                <input type="checkbox" id="condition" name="condition" />
+                <input type="checkbox" id="condition" name="condition" required="required"/>
                 <label for="condition">En validant j'accepte les Conditions générales d'utilisation</label>  
                 <br/>
                 </p>
